@@ -1,10 +1,10 @@
 # Sui-Move-2024-Beta-Migration-Tools
 
-![image](https://github.com/EasonC13/Sui-Move-2024-Beta-Migration-Tools/assets/43432631/0b6a2882-51ff-4656-be55-7e8b99ef914a)
-
 This script is designed to help migrate vectors in `.move` files under the `./source` path according to the new Sui Move 2024 Beta standards.
 
-The script update vector from
+
+![image](https://github.com/EasonC13/Sui-Move-2024-Beta-Migration-Tools/assets/43432631/0b6a2882-51ff-4656-be55-7e8b99ef914a)
+
 
 # How to use it?
 
