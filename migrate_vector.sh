@@ -6,13 +6,13 @@ if [ ! -f "./Move.toml" ]; then
     exit 1
 fi
 
-echo "Have you committed all changes and there are no uncommitted changes? (yes/no)"
-read USER_CONFIRMATION
+# echo "Have you committed all changes and there are no uncommitted changes? (yes/no)"
+# read USER_CONFIRMATION
 
-if [ "$USER_CONFIRMATION" != "yes" ]; then
-    echo "Please commit all changes before running this script."
-    exit 1
-fi
+# if [ "$USER_CONFIRMATION" != "yes" ]; then
+#     echo "Please commit all changes before running this script."
+#     exit 1
+# fi
 
 # Process all .move files in the ./source directory
 find ./sources -type f -name "*.move" | while read FILENAME; do
