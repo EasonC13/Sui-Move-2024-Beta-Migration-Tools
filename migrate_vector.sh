@@ -18,8 +18,15 @@ fi
 find ./sources -type f -name "*.move" | while read FILENAME; do
     # Perform the replacement using more compatible syntax
     # and ensure no unnecessary spaces are included in the replacement
-    sed -i.bak -E 's/vector::([a-zA-Z_]+)\((&mut |&)?([a-zA-Z_]+),\s*(.*)\)/\3.\1(\4)/g' "$FILENAME"
+    # Specifically avoiding adding spaces before the argument list
+    # Step 1: Replace using a placeholder
+    sed -i.bak -E 's/vector::([a-zA-Z_]+)\((&mut |&)?([a-zA-Z_]+),\s*(.*)\)/\3.\1(LOADER_DUMMY><><>\4)/g' "$FILENAME"
+
+    # Step 2: Remove the placeholder
+    sed -i.bak -E 's/LOADER_DUMMY><><> //g' "$FILENAME"
+    sed -i.bak -E 's/LOADER_DUMMY><><>//g' "$FILENAME"
     
+
     if [ $? -eq 0 ]; then
         echo "Processing completed for $FILENAME."
         # Delete the backup file after successful processing
